@@ -1,1 +1,519 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Լիլիթ & Իշխան</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Cormorant Garamond',serif;
+background:#faf7f2;
+color:#fff;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:40px;
+text-align:center;
+position:relative;
+}
+
+.hero{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147342.jpg?v=1780484921') center/cover;
+}
+
+.page2{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147336.jpg?v=1780484940') center/cover;
+}
+
+.page3{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147337.jpg?v=1780484952') center/cover;
+}
+
+.page4{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147340.jpg?v=1780484961') center/cover;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
+
+.content{
+position:relative;
+z-index:2;
+max-width:1000px;
+}
+
+h1{
+font-size:5rem;
+margin-bottom:20px;
+}
+
+h2{
+font-size:3rem;
+margin-bottom:30px;
+}
+
+p{
+font-size:1.5rem;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#d4af37;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin:10px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.calendar{
+background:white;
+padding:30px;
+border-radius:25px;
+color:#333;
+}
+
+.month{
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:10px;
+}
+
+.day,.date{
+width:60px;
+height:60px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.highlight{
+background:#d4af37;
+color:white;
+border-radius:50%;
+font-weight:bold;
+}
+
+.timeline{
+background:rgba(255,255,255,.15);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.timeline-item{
+font-size:2rem;
+margin:20px 0;
+}
+
+.map-buttons{
+margin-top:40px;
+}
+
+.map-buttons a{
+text-decoration:none;
+}
+
+.form-box{
+background:white;
+padding:40px;
+border-radius:25px;
+color:#333;
+width:90%;
+max-width:600px;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:18px;
+}
+
+.radio-group{
+margin:20px 0;
+font-size:20px;
+}
+
+.dashboard{
+background:white;
+color:#333;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:900px;
+}
+
+.guest{
+padding:10px;
+border-bottom:1px solid #eee;
+}
+
+.final h2{
+font-size:4rem;
+}
+
+.final p{
+font-size:2rem;
+}
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:3rem;
+}
+
+h2{
+font-size:2rem;
+}
+
+.timeline-item{
+font-size:1.4rem;
+}
+
+.day,.date{
+width:40px;
+height:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="btn music-btn" onclick="toggleMusic()">
+🎵 Երաժշտություն
+</button>
+
+<audio id="music">
+<source src="YOUR_AUDIO_FILE.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1>Լիլիթ & Իշխան</h1>
+
+<h2>Ուրախ ենք տեղեկացնել մեր հարսանիքի մասին</h2>
+
+<p>
+Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենագեղեցիկ օրը
+</p>
+
+<br>
+
+<a href="#calendar">
+<button class="btn">Բացել հրավերը</button>
+</a>
+
+</div>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section id="calendar" class="page2">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h2>27 Դեկտեմբերի 2025</h2>
+
+<div class="calendar">
+
+<div class="month">Դեկտեմբեր 2025</div>
+
+<div class="grid">
+
+<div class="day">Երկ</div>
+<div class="day">Երք</div>
+<div class="day">Չրք</div>
+<div class="day">Հնգ</div>
+<div class="day">Ուրբ</div>
+<div class="day">Շբթ</div>
+<div class="day">Կիր</div>
+
+<div class="date"></div>
+<div class="date">1</div>
+<div class="date">2</div>
+<div class="date">3</div>
+<div class="date">4</div>
+<div class="date">5</div>
+<div class="date">6</div>
+
+<div class="date">7</div>
+<div class="date">8</div>
+<div class="date">9</div>
+<div class="date">10</div>
+<div class="date">11</div>
+<div class="date">12</div>
+<div class="date">13</div>
+
+<div class="date">14</div>
+<div class="date">15</div>
+<div class="date">16</div>
+<div class="date">17</div>
+<div class="date">18</div>
+<div class="date">19</div>
+<div class="date">20</div>
+
+<div class="date">21</div>
+<div class="date">22</div>
+<div class="date">23</div>
+<div class="date">24</div>
+<div class="date">25</div>
+<div class="date">26</div>
+
+<div class="date highlight">27</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="page3">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h2>Օրվա Ծրագիր</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">10:00 — Փեսայի տուն</div>
+
+<div class="timeline-item">12:00 — Հարսնացուի տուն</div>
+
+<div class="timeline-item">15:00 — Սուրբ Հովհաննես Մկրտիչ Եկեղեցի</div>
+
+<div class="timeline-item">18:00 — Safari Hall</div>
+
+</div>
+
+<div class="map-buttons">
+
+<a target="_blank"
+href="https://www.google.com/maps/place/Saint+John+the+Baptist+Church/@40.2758969,44.6314737">
+<button class="btn">Եկեղեցու Քարտեզ</button>
+</a>
+
+<a target="_blank"
+href="https://www.google.com/maps/place/Safari+Hall/@40.4034577,44.6475451">
+<button class="btn">Հանդիսությունների Սրահ</button>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- RSVP -->
+
+<section class="page4">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h2>Խնդրում ենք հաստատել Ձեր ներկայությունը</h2>
+
+<div class="form-box">
+
+<input id="name" placeholder="Անուն Ազգանուն">
+
+<div class="radio-group">
+
+<label>
+<input type="radio" name="attendance" value="Գալու եմ">
+Գալու եմ
+</label>
+
+<br><br>
+
+<label>
+<input type="radio" name="attendance" value="Չեմ կարող գալ">
+Չեմ կարող գալ
+</label>
+
+</div>
+
+<button class="btn" onclick="submitRSVP()">
+Ուղարկել
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HOST -->
+
+<section>
+
+<div class="dashboard">
+
+<h2 style="color:#333;">Հյուրերի Ցանկ</h2>
+
+<div id="guests"></div>
+
+<button class="btn" onclick="loadGuests()">
+Թարմացնել
+</button>
+
+</div>
+
+</section>
+
+<!-- END -->
+
+<section class="final hero">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h2>Սիրով Սպասում Ենք Ձեզ</h2>
+
+<p>
+Մեզ համար մեծ պատիվ կլինի Ձեր ներկայությունը
+</p>
+
+<br>
+
+<h1>Լիլիթ ❤️ Իշխան</h1>
+
+</div>
+
+</section>
+
+<script>
+
+const SCRIPT_URL =
+"YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+function toggleMusic(){
+
+const music=document.getElementById('music');
+
+if(music.paused){
+music.play();
+}
+else{
+music.pause();
+}
+
+}
+
+async function submitRSVP(){
+
+const name=document.getElementById('name').value;
+
+const attendance=
+document.querySelector(
+'input[name="attendance"]:checked'
+)?.value;
+
+if(!name || !attendance){
+
+alert("Խնդրում ենք լրացնել տվյալները");
+
+return;
+}
+
+await fetch(SCRIPT_URL,{
+method:"POST",
+body:JSON.stringify({
+name,
+attendance
+})
+});
+
+alert("Շնորհակալություն");
+
+}
+
+async function loadGuests(){
+
+const res=await fetch(SCRIPT_URL);
+
+const data=await res.json();
+
+const guests=document.getElementById('guests');
+
+guests.innerHTML="";
+
+data.forEach(g=>{
+
+guests.innerHTML+=`
+<div class="guest">
+${g.name} — ${g.attendance}
+</div>
+`;
+
+});
+
+}
+
+loadGuests();
+
+</script>
+
+</body>
+</html>
