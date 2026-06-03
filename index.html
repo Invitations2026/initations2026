@@ -9,76 +9,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
 body{
+margin:0;
 font-family:'Cormorant Garamond',serif;
-background:#faf7f2;
-color:#fff;
+background:#0f0f0f;
+color:white;
 overflow-x:hidden;
 }
 
 section{
 min-height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 flex-direction:column;
-padding:40px;
 text-align:center;
+padding:40px;
 position:relative;
-}
-
-.hero{
-background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147342.jpg?v=1780484921') center/cover;
-}
-
-.page2{
-background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147336.jpg?v=1780484940') center/cover;
-}
-
-.page3{
-background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147337.jpg?v=1780484952') center/cover;
-}
-
-.page4{
-background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147340.jpg?v=1780484961') center/cover;
 }
 
 .overlay{
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.45);
+background:rgba(0,0,0,0.55);
 }
 
 .content{
 position:relative;
 z-index:2;
-max-width:1000px;
+max-width:900px;
 }
 
-h1{
-font-size:5rem;
-margin-bottom:20px;
-}
-
-h2{
-font-size:3rem;
-margin-bottom:30px;
-}
-
-p{
-font-size:1.5rem;
-}
+h1{font-size:4rem;margin-bottom:10px;}
+h2{font-size:2.5rem;margin-bottom:20px;}
+p{font-size:1.3rem;}
 
 .btn{
-padding:15px 35px;
+padding:14px 30px;
 border:none;
 border-radius:40px;
 background:#d4af37;
@@ -86,432 +53,216 @@ color:white;
 font-size:18px;
 cursor:pointer;
 margin:10px;
-transition:.3s;
+transition:0.3s;
+}
+.btn:hover{transform:scale(1.05);}
+
+/* HERO */
+.hero{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147342.jpg?v=1780484921') center/cover no-repeat;
 }
 
-.btn:hover{
-transform:scale(1.05);
+/* PAGE 2 */
+.page2{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147336.jpg?v=1780484940') center/cover no-repeat;
 }
 
+/* PAGE 3 */
+.page3{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147337.jpg?v=1780484952') center/cover no-repeat;
+}
+
+/* PAGE 4 */
+.page4{
+background:url('https://cdn.shopify.com/s/files/1/1035/2233/6849/files/5397738512352147340.jpg?v=1780484961') center/cover no-repeat;
+}
+
+/* CALENDAR */
 .calendar{
 background:white;
-padding:30px;
-border-radius:25px;
-color:#333;
+color:#222;
+padding:25px;
+border-radius:20px;
 }
-
-.month{
-font-size:2rem;
-margin-bottom:20px;
-}
-
 .grid{
 display:grid;
 grid-template-columns:repeat(7,1fr);
-gap:10px;
+gap:8px;
+margin-top:10px;
 }
-
-.day,.date{
-width:60px;
-height:60px;
-display:flex;
-justify-content:center;
-align-items:center;
+.cell{
+padding:10px;
+text-align:center;
 }
-
 .highlight{
 background:#d4af37;
 color:white;
 border-radius:50%;
-font-weight:bold;
 }
 
+/* TIMELINE */
 .timeline{
-background:rgba(255,255,255,.15);
-padding:30px;
+background:rgba(255,255,255,0.1);
+padding:20px;
 border-radius:20px;
 backdrop-filter:blur(10px);
 }
 
-.timeline-item{
-font-size:2rem;
-margin:20px 0;
-}
-
-.map-buttons{
-margin-top:40px;
-}
-
-.map-buttons a{
-text-decoration:none;
-}
-
-.form-box{
-background:white;
-padding:40px;
-border-radius:25px;
-color:#333;
-width:90%;
-max-width:600px;
-}
-
+/* FORM */
 input{
-width:100%;
-padding:15px;
+padding:12px;
+width:90%;
 margin:10px 0;
 border-radius:10px;
-border:1px solid #ddd;
-font-size:18px;
+border:none;
 }
 
-.radio-group{
-margin:20px 0;
-font-size:20px;
+.radio{
+margin:10px;
 }
 
-.dashboard{
-background:white;
-color:#333;
-padding:30px;
-border-radius:20px;
-width:90%;
-max-width:900px;
-}
-
-.guest{
-padding:10px;
-border-bottom:1px solid #eee;
-}
-
-.final h2{
-font-size:4rem;
-}
-
-.final p{
-font-size:2rem;
-}
-
-.music-btn{
+/* MUSIC BUTTON */
+.music{
 position:fixed;
 top:20px;
 right:20px;
 z-index:999;
 }
 
+/* MOBILE */
 @media(max-width:768px){
-
-h1{
-font-size:3rem;
+h1{font-size:2.8rem;}
+h2{font-size:2rem;}
 }
-
-h2{
-font-size:2rem;
-}
-
-.timeline-item{
-font-size:1.4rem;
-}
-
-.day,.date{
-width:40px;
-height:40px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<button class="btn music-btn" onclick="toggleMusic()">
-🎵 Երաժշտություն
-</button>
+<!-- MUSIC -->
+<button class="btn music" onclick="toggleMusic()">🎵 Երաժշտություն</button>
 
 <audio id="music">
-<source src="YOUR_AUDIO_FILE.mp3" type="audio/mpeg">
+<source src="" type="audio/mp3">
 </audio>
 
 <!-- PAGE 1 -->
-
 <section class="hero">
-
 <div class="overlay"></div>
-
 <div class="content">
-
 <h1>Լիլիթ & Իշխան</h1>
-
 <h2>Ուրախ ենք տեղեկացնել մեր հարսանիքի մասին</h2>
-
-<p>
-Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենագեղեցիկ օրը
-</p>
-
-<br>
-
-<a href="#calendar">
-<button class="btn">Բացել հրավերը</button>
-</a>
-
+<p>Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենագեղեցիկ օրը</p>
+<a href="#calendar"><button class="btn">Բացել հրավերը</button></a>
 </div>
-
 </section>
 
-<!-- PAGE 2 -->
-
+<!-- PAGE 2 CALENDAR -->
 <section id="calendar" class="page2">
-
 <div class="overlay"></div>
-
 <div class="content">
 
-<h2>27 Դեկտեմբերի 2025</h2>
+<h2>27 Դեկտեմբեր 2025</h2>
 
 <div class="calendar">
-
-<div class="month">Դեկտեմբեր 2025</div>
-
 <div class="grid">
+<div class="cell">Երկ</div><div class="cell">Երք</div><div class="cell">Չրք</div>
+<div class="cell">Հնգ</div><div class="cell">Ուրբ</div><div class="cell">Շբթ</div><div class="cell">Կիր</div>
 
-<div class="day">Երկ</div>
-<div class="day">Երք</div>
-<div class="day">Չրք</div>
-<div class="day">Հնգ</div>
-<div class="day">Ուրբ</div>
-<div class="day">Շբթ</div>
-<div class="day">Կիր</div>
+<div class="cell"></div><div class="cell">1</div><div class="cell">2</div>
+<div class="cell">3</div><div class="cell">4</div><div class="cell">5</div><div class="cell">6</div>
 
-<div class="date"></div>
-<div class="date">1</div>
-<div class="date">2</div>
-<div class="date">3</div>
-<div class="date">4</div>
-<div class="date">5</div>
-<div class="date">6</div>
+<div class="cell">7</div><div class="cell">8</div><div class="cell">9</div>
+<div class="cell">10</div><div class="cell">11</div><div class="cell">12</div><div class="cell">13</div>
 
-<div class="date">7</div>
-<div class="date">8</div>
-<div class="date">9</div>
-<div class="date">10</div>
-<div class="date">11</div>
-<div class="date">12</div>
-<div class="date">13</div>
+<div class="cell">14</div><div class="cell">15</div><div class="cell">16</div>
+<div class="cell">17</div><div class="cell">18</div><div class="cell">19</div><div class="cell">20</div>
 
-<div class="date">14</div>
-<div class="date">15</div>
-<div class="date">16</div>
-<div class="date">17</div>
-<div class="date">18</div>
-<div class="date">19</div>
-<div class="date">20</div>
-
-<div class="date">21</div>
-<div class="date">22</div>
-<div class="date">23</div>
-<div class="date">24</div>
-<div class="date">25</div>
-<div class="date">26</div>
-
-<div class="date highlight">27</div>
-
+<div class="cell">21</div><div class="cell">22</div><div class="cell">23</div>
+<div class="cell">24</div><div class="cell">25</div><div class="cell">26</div>
+<div class="cell highlight">27</div>
+</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
 <!-- PAGE 3 -->
-
 <section class="page3">
-
 <div class="overlay"></div>
-
 <div class="content">
 
 <h2>Օրվա Ծրագիր</h2>
 
 <div class="timeline">
-
-<div class="timeline-item">10:00 — Փեսայի տուն</div>
-
-<div class="timeline-item">12:00 — Հարսնացուի տուն</div>
-
-<div class="timeline-item">15:00 — Սուրբ Հովհաննես Մկրտիչ Եկեղեցի</div>
-
-<div class="timeline-item">18:00 — Safari Hall</div>
-
+<p>10:00 — Փեսայի տուն</p>
+<p>12:00 — Հարսնացուի տուն</p>
+<p>15:00 — Սուրբ Հովհաննես Մկրտիչ եկեղեցի</p>
+<p>18:00 — Safari Hall</p>
 </div>
 
-<div class="map-buttons">
-
-<a target="_blank"
-href="https://www.google.com/maps/place/Saint+John+the+Baptist+Church/@40.2758969,44.6314737">
-<button class="btn">Եկեղեցու Քարտեզ</button>
+<a target="_blank" href="https://www.google.com/maps/place/Saint+John+the+Baptist+Church">
+<button class="btn">Եկեղեցու քարտեզ</button>
 </a>
 
-<a target="_blank"
-href="https://www.google.com/maps/place/Safari+Hall/@40.4034577,44.6475451">
-<button class="btn">Հանդիսությունների Սրահ</button>
+<a target="_blank" href="https://www.google.com/maps/place/Safari+Hall">
+<button class="btn">Հանդիսությունների սրահ</button>
 </a>
 
 </div>
-
-</div>
-
 </section>
 
-<!-- RSVP -->
-
+<!-- PAGE 4 RSVP -->
 <section class="page4">
-
 <div class="overlay"></div>
-
 <div class="content">
 
-<h2>Խնդրում ենք հաստատել Ձեր ներկայությունը</h2>
-
-<div class="form-box">
+<h2>Հաստատեք Ձեր ներկայությունը</h2>
 
 <input id="name" placeholder="Անուն Ազգանուն">
 
-<div class="radio-group">
-
-<label>
-<input type="radio" name="attendance" value="Գալու եմ">
-Գալու եմ
-</label>
-
-<br><br>
-
-<label>
-<input type="radio" name="attendance" value="Չեմ կարող գալ">
-Չեմ կարող գալ
-</label>
-
+<div class="radio">
+<label><input type="radio" name="r" value="Գալու եմ"> Գալու եմ</label>
 </div>
 
-<button class="btn" onclick="submitRSVP()">
-Ուղարկել
-</button>
-
+<div class="radio">
+<label><input type="radio" name="r" value="Չեմ կարող գալ"> Չեմ կարող գալ</label>
 </div>
 
-</div>
-
-</section>
-
-<!-- HOST -->
-
-<section>
-
-<div class="dashboard">
-
-<h2 style="color:#333;">Հյուրերի Ցանկ</h2>
-
-<div id="guests"></div>
-
-<button class="btn" onclick="loadGuests()">
-Թարմացնել
-</button>
+<button class="btn" onclick="send()">Ուղարկել</button>
 
 </div>
-
 </section>
 
 <!-- END -->
-
-<section class="final hero">
-
+<section class="hero">
 <div class="overlay"></div>
-
 <div class="content">
-
-<h2>Սիրով Սպասում Ենք Ձեզ</h2>
-
-<p>
-Մեզ համար մեծ պատիվ կլինի Ձեր ներկայությունը
-</p>
-
-<br>
-
+<h2>Սիրով սպասում ենք Ձեզ</h2>
 <h1>Լիլիթ ❤️ Իշխան</h1>
-
 </div>
-
 </section>
 
 <script>
 
-const SCRIPT_URL =
-"YOUR_GOOGLE_SCRIPT_URL_HERE";
-
 function toggleMusic(){
-
-const music=document.getElementById('music');
-
-if(music.paused){
-music.play();
-}
-else{
-music.pause();
+const m=document.getElementById("music");
+if(m.paused) m.play();
+else m.pause();
 }
 
-}
+function send(){
+const name=document.getElementById("name").value;
+const choice=document.querySelector('input[name="r"]:checked');
 
-async function submitRSVP(){
-
-const name=document.getElementById('name').value;
-
-const attendance=
-document.querySelector(
-'input[name="attendance"]:checked'
-)?.value;
-
-if(!name || !attendance){
-
-alert("Խնդրում ենք լրացնել տվյալները");
-
+if(!name || !choice){
+alert("Լրացրեք բոլոր դաշտերը");
 return;
 }
 
-await fetch(SCRIPT_URL,{
-method:"POST",
-body:JSON.stringify({
-name,
-attendance
-})
-});
-
-alert("Շնորհակալություն");
-
+alert("Շնորհակալություն, " + name + " ❤️ Ձեր պատասխանն ընդունված է։");
+document.getElementById("name").value="";
 }
-
-async function loadGuests(){
-
-const res=await fetch(SCRIPT_URL);
-
-const data=await res.json();
-
-const guests=document.getElementById('guests');
-
-guests.innerHTML="";
-
-data.forEach(g=>{
-
-guests.innerHTML+=`
-<div class="guest">
-${g.name} — ${g.attendance}
-</div>
-`;
-
-});
-
-}
-
-loadGuests();
 
 </script>
 
